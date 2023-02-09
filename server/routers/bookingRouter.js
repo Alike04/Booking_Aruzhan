@@ -8,7 +8,7 @@ const bookingRouter = express.Router();
 bookingRouter.post("/create", auth, async (req, res) => {
   req.body.user = req.userData._id;
   req.body.status = "active"
-  const booking = await createBooking(req.body);
+  const booking = await createBooking(req.body, req.userData.email);
   return res.status(200).send({ booking: booking });
 });
 bookingRouter.get("/:userId", auth, async (req, res) => {

@@ -80,6 +80,9 @@ const Booking = () => {
       })
       .catch((e) => console.error(e));
   };
+  const tileDisabled = ({ activeStartDate, date, view }) => {
+    return date < new Date();
+  };
 
   const create = (body) => {
     console.log(body);
@@ -99,7 +102,7 @@ const Booking = () => {
       <div className="flex flex-col justify-center items-center h-[70vh]">
         <div className="text-2xl">You are not logged in</div>
         <NavLink to="/login">
-          <button className="mt-4 bg-green-500 p-3 rounded-md hover:bg-green-600 duration-300 text-white">
+          <button className="mt-4 bg-dark p-3 rounded-md duration-300 text-white">
             Login
           </button>
         </NavLink>
@@ -233,7 +236,12 @@ const Booking = () => {
           </div>
           <p className="text-center">Pick a convenient date & time</p>
           <div className="flex space-x-5">
-            <Calendar onChange={onChange} value={date} locale={"EN"} />
+            <Calendar
+              tileDisabled={tileDisabled}
+              onChange={onChange}
+              value={date}
+              locale={"EN"}
+            />
             <div className="border-2 border-black p-2 w-[100%]">
               <p className="text-center mb-7">Times</p>
               <form name="time" className="grid grid-cols-2 grid-rows-3 gap-5">
@@ -245,7 +253,7 @@ const Booking = () => {
           </div>
           <div className="w-[100%] flex justify-center">
             <button
-              className="btn px-4 py-2 bg-green-400 rounded text-white"
+              className="btn px-4 py-2 bg-primary rounded text-white"
               onClick={() => onSubmit()}
             >
               Book
@@ -278,7 +286,7 @@ const Booking = () => {
           </div>
           <div className="flex justify-around">
             <button
-              className="btn px-4 py-2 bg-green-400 rounded text-white hover:bg-green-500"
+              className="btn px-4 py-2 bg-primary rounded text-white hover:bg-green-500"
               onClick={() => {
                 setFocus(_id);
               }}
@@ -287,7 +295,7 @@ const Booking = () => {
             </button>
             <button
               onClick={() => cancel(_id)}
-              className="btn px-4 py-2 bg-green-400 rounded text-white hover:bg-green-500"
+              className="btn px-4 py-2 bg-primary rounded text-white hover:bg-green-500"
             >
               Cancel
             </button>

@@ -42,7 +42,10 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center h-[85vh] bg-gray-100">
-      <form className="bg-white p-10 rounded-lg shadow-md" onSubmit={onSubmit}>
+      <form
+        className="bg-white p-10 rounded-lg shadow-lg border-2 hover:border-primary border-transparent duration-300"
+        onSubmit={onSubmit}
+      >
         <h2 className="text-lg font-medium mb-4">Register</h2>
         <div className="mb-4">
           <label className="block font-medium mb-2" htmlFor="email">
@@ -88,7 +91,7 @@ const Register = () => {
             />
           </div>
         </div>
-        <button className="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-600">
+        <button className="bg-primary text-white p-2 rounded-lg hover:bg-indigo-600">
           Register
         </button>
         <h1 className="text-red-500">{error}</h1>

@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 .main-image {
-  background-image: url(https://media.istockphoto.com/id/1141425315/photo/school-classroom-in-blur-background-without-young-student-blurry-view-of-elementary-class.jpg?s=170667a&w=0&k=20&c=LeQ3rZ-cj256X78FOrOO6WbpJvn6Wa80BAFgBu1DJs4=);
+  background-image: url(https://www.tafesa.edu.au/img/courses/2013/T697032175/sc-adv-english-writing-grammar.JPG);
   background-size: cover;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
 }

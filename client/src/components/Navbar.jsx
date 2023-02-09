@@ -12,26 +12,26 @@ const Navbar = () => {
     }
   }, []);
   return (
-    <nav className="h-[15vh] w-[100%] flex items-center bg-amber-300">
+    <nav className="h-[15vh] w-[100%] flex items-center bg-primary">
       <div className="flex justify-between mx-auto w-[80%] text-lg text-white">
         <div className="">
           <NavLink to="/">LOGO</NavLink>
         </div>
         <div className="space-x-16">
           <NavLink
-            className="bg-green-500 p-3 rounded-md hover:bg-green-600 duration-300 "
+            className="bg-dark p-3 rounded-md text-black hover:text-white duration-300 "
             to="about"
           >
             About
           </NavLink>
           <NavLink
-            className="bg-green-500 p-3 rounded-md hover:bg-green-600 duration-300 "
+            className="bg-dark p-3 rounded-md text-black hover:text-white duration-300 "
             to="courses"
           >
             Courses
           </NavLink>
           <NavLink
-            className="bg-green-500 p-3 rounded-md hover:bg-green-600 duration-300"
+            className="bg-dark p-3 rounded-md text-black hover:text-white duration-300"
             to="booking"
           >
             Booking
@@ -40,13 +40,13 @@ const Navbar = () => {
         {!user ? (
           <div className="space-x-16">
             <NavLink
-              className="bg-green-500 p-3 rounded-md hover:bg-green-600 duration-300"
+              className="bg-dark p-3 rounded-md text-black hover:text-white duration-300"
               to="login"
             >
               Login
             </NavLink>
             <NavLink
-              className="bg-green-500 p-3 rounded-md hover:bg-green-600 duration-300"
+              className="bg-dark p-3 rounded-md text-black hover:text-white duration-300"
               to="register"
             >
               Register
@@ -55,7 +55,7 @@ const Navbar = () => {
         ) : (
           <div>
             <div
-              className="bg-green-500 p-3 rounded-md hover:bg-green-600 duration-300"
+              className="bg-dark p-3 rounded-md text-black hover:text-white duration-300"
               onClick={() => {
                 localStorage.removeItem("token");
                 window.location.reload();
